@@ -2,6 +2,7 @@ require 'httparty'
 
 ci_projects = [
   { user: 'noms-digital-studio', repo: 'ndelius-new-tech', branch: 'master'},
+  { user: 'noms-digital-studio', repo: 'pdf-generator', branch: 'master'},
 ]
 
 def duration(time)
