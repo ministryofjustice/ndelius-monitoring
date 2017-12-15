@@ -35,6 +35,9 @@ servers = [
   { name: 'new-tech-dev', url: 'http://delius-new-tech.eu-west-2.elasticbeanstalk.com' },
   { name: 'new-tech-stage', url: 'http://delius-new-tech-stage.eu-west-2.elasticbeanstalk.com' },
   { name: 'new-tech-prod', url: 'http://delius-new-tech-prod.eu-west-2.elasticbeanstalk.com' },
+  { name: 'pdf-gen-dev', url: 'http://pdf-generator.eu-west-2.elasticbeanstalk.com/healthcheck' },
+  { name: 'pdf-gen-stage', url: 'http://pdf-generator-stage.eu-west-2.elasticbeanstalk.com/healthcheck' },
+  { name: 'pdf-gen-prod', url: 'http://pdf-generator-prod.eu-west-2.elasticbeanstalk.com/healthcheck' },
 ]
 
 def gather_health_data(server)
@@ -49,10 +52,16 @@ def gather_health_data(server)
     }
   rescue HTTParty::Error => expection
     ap expection.class
-    return { status: 'error', gitRef: expection.class, ldap: "N/A", db: "N/A" }
+    return {
+      status: 'error',
+      gitRef: expection.class
+    }
   rescue StandardError => expection
     ap expection.class
-    return { status: 'error', gitRef: expection.class, ldap: "N/A", db: "N/A" }
+    return {
+      status: 'error',
+      gitRef: expection.class
+    }
   end
 end
 
