@@ -35,9 +35,9 @@ servers = [
   { name: 'new-tech-dev', url: 'http://delius-new-tech.eu-west-2.elasticbeanstalk.com' },
   { name: 'new-tech-stage', url: 'http://delius-new-tech-stage.eu-west-2.elasticbeanstalk.com' },
   { name: 'new-tech-prod', url: 'http://delius-new-tech-prod.eu-west-2.elasticbeanstalk.com' },
-  { name: 'pdf-gen-dev', url: 'http://pdf-generator.eu-west-2.elasticbeanstalk.com/healthcheck' },
-  { name: 'pdf-gen-stage', url: 'http://pdf-generator-stage.eu-west-2.elasticbeanstalk.com/healthcheck' },
-  { name: 'pdf-gen-prod', url: 'http://pdf-generator-prod.eu-west-2.elasticbeanstalk.com/healthcheck' },
+  { name: 'pdf-gen-dev', url: 'http://pdf-generator.eu-west-2.elasticbeanstalk.com' },
+  { name: 'pdf-gen-stage', url: 'http://pdf-generator-stage.eu-west-2.elasticbeanstalk.com' },
+  { name: 'pdf-gen-prod', url: 'http://pdf-generator-prod.eu-west-2.elasticbeanstalk.com' },
 ]
 
 def gather_health_data(server)
