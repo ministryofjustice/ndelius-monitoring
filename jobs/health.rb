@@ -48,6 +48,7 @@ def gather_health_data(server)
     return {
         status: response_health['status'],
         gitRef: 'Unknown',
+        version: response_health['version'],
         pdfGeneratorStatus: 'Unknown'
     }
   rescue HTTParty::Error => expection
