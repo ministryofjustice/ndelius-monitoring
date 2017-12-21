@@ -44,25 +44,13 @@ def gather_health_data(server)
 
   begin
     response_health = HTTParty.get("#{server[:url]}/healthcheck", headers: { 'Accept' => 'application/json' }, timeout: 5)
-
-    return {
-        status: response_health['status'],
-        gitRef: 'Unknown',
-        version: response_health['version'],
-        pdfGeneratorStatus: 'Unknown'
-    }
+    return response_health
   rescue HTTParty::Error => expection
     ap expection.class
-    return {
-      status: 'error',
-      gitRef: expection.class
-    }
+    return { status: 'error', version: expection.class }
   rescue StandardError => expection
     ap expection.class
-    return {
-      status: 'error',
-      gitRef: expection.class
-    }
+    return { status: 'error', version: expection.class }
   end
 end
 
